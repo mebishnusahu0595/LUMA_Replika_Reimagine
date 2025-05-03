@@ -22,8 +22,10 @@ const groqApiKey = process.env.GROQ_API_KEY; // For Groq STT API
 
 const app = express();
 app.use(express.json());
-app.use(cors());
-const port = 3000;
+// Allow all origins for CORS
+app.use(cors({ origin: "*" }));
+
+const port = process.env.PORT || 5000;
 
 // Multer setup for audio uploads
 const upload = multer({ dest: "audios/" });
