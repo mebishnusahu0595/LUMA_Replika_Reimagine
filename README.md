@@ -24,8 +24,8 @@ Follow these steps to run the full stack app on your local machine:
 ### ✅ Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name 
+git clone https://github.com/mebishnusahu0595/LUMA_Replika_Reimagine.git
+cd LUMA_Replika_Reimagine
 ```
 
 #### 🚀 Step 2: In main directory run :-
