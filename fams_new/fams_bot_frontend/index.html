@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="favicon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAMS AI CHATBOT</title>
+    <!-- Add the blue gradient and stars effect CSS -->
+    <style>
+      body {
+        margin: 0;
+        /* Blue to violet gradient, lighter at top, more violet at bottom */
+        background: linear-gradient(180deg, #6dd5ed 0%, #a084ee 100%);
+        overflow: hidden;
+        position: relative;
+        transition: background 0.8s cubic-bezier(.4,0,.2,1);
+      }
+      body.violet-bg {
+        /* Violet gradient for tap effect */
+        background: linear-gradient(180deg, #a084ee 0%, #837DEB 100%);
+      }
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        animation: fall linear infinite;
+        opacity: 0.7;
+      }
+      @keyframes fall {
+        0% {
+          transform: translateY(-10px);
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh);
+          opacity: 0.2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <!-- Add the falling stars script -->
+    <script>
+      const starsContainer = document.querySelector('.stars');
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        star.style.animationDelay = Math.random() * 5 + 's';
+        starsContainer.appendChild(star);
+      }
+    
+      // Button tap background animation
+      document.addEventListener('DOMContentLoaded', () => {
+        // Delegate event to all future .bg-pink-500 buttons
+        document.body.addEventListener('mousedown', function(e) {
+          if (e.target.closest('.bg-pink-500')) {
+            document.body.classList.add('violet-bg');
+          }
+        });
+        document.body.addEventListener('mouseup', function(e) {
+          if (e.target.closest('.bg-pink-500')) {
+            setTimeout(() => document.body.classList.remove('violet-bg'), 300);
+          }
+        });
+        // For touch devices
+        document.body.addEventListener('touchstart', function(e) {
+          if (e.target.closest('.bg-pink-500')) {
+            document.body.classList.add('violet-bg');
+          }
+        });
+        document.body.addEventListener('touchend', function(e) {
+          if (e.target.closest('.bg-pink-500')) {
+            setTimeout(() => document.body.classList.remove('violet-bg'), 300);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
