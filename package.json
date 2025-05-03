@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "concurrently \"yarn --cwd fams_new/fams_bot_frontend dev\" \"yarn --cwd fams_new/fams_bot_backend dev\" \"yarn dev\""
+    "start": "yarn install && concurrently \"yarn --cwd fams_new/fams_bot_frontend dev\" \"yarn --cwd fams_new/fams_bot_backend dev\" \"yarn dev\""
   },
   "dependencies": {
     "framer-motion": "^11.0.8",
