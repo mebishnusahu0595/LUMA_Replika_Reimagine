@@ -3,6 +3,5 @@
 ### a) **Backend**
 
 node_modules/
-.env
 bin
 audios/message_*

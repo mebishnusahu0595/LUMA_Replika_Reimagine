@@ -28,5 +28,4 @@ dist-ssr
 ### a) **Backend**
 ```plaintext
 node_modules/
-.env
 ```
