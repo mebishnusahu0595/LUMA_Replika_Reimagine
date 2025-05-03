@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+## 2. `.gitignore` Files
+
+### a) **Backend**
+```plaintext
+node_modules/
+.env
+```
