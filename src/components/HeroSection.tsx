@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
         
         <button
           className="bg-white text-indigo-800 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 mb-12"
-          onClick={() => window.location.href = 'http://localhost:5174'}
+          onClick={() => window.location.href = 'https://luma-replika-reimagine-1.onrender.com/'}
         >
           Start for free
         </button>
